@@ -1,0 +1,151 @@
+.header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.header-content {
+  position: relative;
+  z-index: 3;
+  transform-style: preserve-3d;
+}
+
+.name-3d-wrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1200px;
+  display: inline-block;
+}
+
+.main-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  margin-bottom: 20px;
+  letter-spacing: 0.1em;
+  position: relative;
+  transform-style: preserve-3d;
+  display: inline-block;
+}
+
+.main-name-3d {
+  color: var(--neon-white);
+  text-shadow: 
+    0 0 10px var(--glow-white),
+    0 0 20px var(--glow-blue),
+    0 0 30px var(--glow-purple),
+    0 0 40px var(--glow-blue);
+  animation: name-glow 2s ease-in-out infinite alternate;
+  position: relative;
+  transform-style: preserve-3d;
+  display: inline-block;
+}
+
+.main-name-3d::before {
+  content: 'Stefan guwAPI';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--neon-purple);
+  text-shadow: 
+    0 0 20px var(--glow-purple),
+    0 0 40px var(--glow-purple);
+  transform: translateZ(-40px);
+  opacity: 0.4;
+  z-index: -1;
+  filter: blur(2px);
+}
+
+.main-name-3d::after {
+  content: 'Stefan guwAPI';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: transparent;
+  text-shadow: 
+    0 0 60px var(--glow-blue),
+    0 0 100px var(--glow-purple);
+  transform: translateZ(-80px);
+  opacity: 0.2;
+  z-index: -2;
+  filter: blur(6px);
+}
+
+@keyframes name-glow {
+  from {
+    text-shadow: 
+      0 0 10px var(--glow-white),
+      0 0 20px var(--glow-blue),
+      0 0 30px var(--glow-purple);
+  }
+  to {
+    text-shadow: 
+      0 0 20px var(--glow-white),
+      0 0 30px var(--glow-blue),
+      0 0 40px var(--glow-purple),
+      0 0 50px var(--glow-blue);
+  }
+}
+
+.tagline {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: var(--neon-blue);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.header-line-node {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--neon-blue);
+  box-shadow: 
+    0 0 10px var(--glow-blue),
+    0 0 20px var(--glow-blue);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  animation: node-pulse 2s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.header-line-node::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), transparent);
+  transform: translateZ(5px);
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    min-height: 80vh;
+  }
+  
+  .header-line-node {
+    left: 30px;
+    transform: translateY(-50%);
+  }
+}
+
