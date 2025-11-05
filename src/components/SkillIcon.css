@@ -1,0 +1,37 @@
+.skill-icon-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-svg {
+  width: 100%;
+  height: 100%;
+  color: var(--neon-blue);
+  filter: drop-shadow(0 0 8px var(--glow-blue));
+  transition: all 0.4s ease;
+}
+
+.skill-icon-container:hover .skill-svg {
+  color: var(--neon-purple);
+  filter: drop-shadow(0 0 15px var(--glow-purple));
+  transform: scale(1.1) rotate(5deg);
+}
+
+.skill-icon-fallback {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--neon-blue);
+  text-shadow: 0 0 10px var(--glow-blue);
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.4s ease;
+}
+
+.skill-icon-container:hover .skill-icon-fallback {
+  color: var(--neon-purple);
+  text-shadow: 0 0 15px var(--glow-purple);
+  transform: scale(1.1);
+}
+

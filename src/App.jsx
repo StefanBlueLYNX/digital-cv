@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Header from './components/Header'
@@ -7,12 +7,21 @@ import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import BlueprintBackground from './components/BlueprintBackground'
+import ParticleBackground from './components/ParticleBackground'
+import FloatingOrbs from './components/FloatingOrbs'
+import AnimatedShapes from './components/AnimatedShapes'
+import NetworkLines from './components/NetworkLines'
+import ScrollProgress from './components/ScrollProgress'
+import NavigationDots from './components/NavigationDots'
+import CursorTrail from './components/CursorTrail'
+import LoadingScreen from './components/LoadingScreen'
 import './App.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   const mainLineRef = useRef(null)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     // Animate main vertical line on load
@@ -49,9 +58,21 @@ function App() {
     })
   }, [])
 
+  const handleLoadingComplete = () => {
+    setIsLoading(false)
+  }
+
   return (
     <div className="app">
+      {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
+      <CursorTrail />
+      <FloatingOrbs />
+      <AnimatedShapes />
+      <NetworkLines />
+      <ParticleBackground />
       <BlueprintBackground />
+      <ScrollProgress />
+      <NavigationDots />
       <div className="main-container">
         <div className="main-line" ref={mainLineRef}></div>
         <Header />

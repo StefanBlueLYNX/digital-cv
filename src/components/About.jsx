@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import StaggeredText from './StaggeredText'
 import './About.css'
 
 function About() {
@@ -80,13 +81,15 @@ function About() {
     }
   }, [])
 
-  return (
-    <section ref={aboutRef} className="about section">
+      return (
+        <section ref={aboutRef} className="about section about-section">
       <div className="branch-line branch-line-left" ref={branchLineRef}></div>
       <div className="branch-line branch-line-right"></div>
       <div className="about-container">
-        <div ref={contentRef} className="about-content about-content-left">
-          <h2 className="section-title">About Me</h2>
+            <div ref={contentRef} className="about-content about-content-left">
+              <h2 className="section-title">
+                <StaggeredText text="About Me" />
+              </h2>
           <div className="about-text-container">
             <p className="about-text">
               Passionate software developer with expertise in full-stack development, 
@@ -99,8 +102,10 @@ function About() {
             </div>
           </div>
         </div>
-        <div className="about-content about-content-right">
-          <h2 className="section-title">Despre Mine</h2>
+            <div className="about-content about-content-right">
+              <h2 className="section-title">
+                <StaggeredText text="Despre Mine" />
+              </h2>
           <div className="about-text-container">
             <p className="about-text">
             Sunt un dezvoltator full-stack pasionat de inteligență artificială și automatizare, cu o abordare practică și orientată spre rezultate. Am început dintr-un rol non-tehnic și, prin autoeducație și experiență directă, am evoluat rapid către dezvoltarea completă de aplicații web integrate cu AI.

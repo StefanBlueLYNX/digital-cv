@@ -1,0 +1,29 @@
+.typing-effect {
+  display: inline-block;
+  position: relative;
+}
+
+.typing-text {
+  color: var(--neon-blue);
+  font-weight: 400;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--neon-blue);
+  margin-left: 4px;
+  animation: cursor-blink 1s infinite;
+  box-shadow: 0 0 10px var(--glow-blue);
+}
+
+@keyframes cursor-blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+

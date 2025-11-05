@@ -15,6 +15,10 @@
   --line-width: 2px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Roboto Mono', monospace;
   background-color: var(--bg-dark);
@@ -44,5 +48,17 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--neon-purple);
+}
+
+/* Smooth transitions for better UX */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--neon-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 

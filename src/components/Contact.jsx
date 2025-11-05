@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { createClient } from '@supabase/supabase-js'
+import StaggeredText from './StaggeredText'
 import './Contact.css'
 
 // Initialize Supabase client
@@ -97,11 +98,13 @@ function Contact() {
   }
 
   return (
-    <section ref={contactRef} className="contact section">
+    <section ref={contactRef} className="contact section contact-section">
       <div className="contact-branch-line"></div>
       <div className="branch-node"></div>
       <div className="contact-content">
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title">
+          <StaggeredText text="Get In Touch" />
+        </h2>
         <div className="contact-container">
           <div className="contact-info">
             <div className="contact-item">

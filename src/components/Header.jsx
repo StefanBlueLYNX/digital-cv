@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+import TypingEffect from './TypingEffect'
 import './Header.css'
 
 function Header() {
@@ -7,6 +8,13 @@ function Header() {
   const taglineRef = useRef(null)
   const headerRef = useRef(null)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+
+  const roles = [
+    'Fullstack Developer',
+    'Software Engineer',
+    'AI Enthusiast',
+    'Problem Solver'
+  ]
 
   useEffect(() => {
     gsap.fromTo(nameRef.current,
@@ -56,7 +64,7 @@ function Header() {
   }, [])
 
   return (
-    <header ref={headerRef} className="header section">
+    <header ref={headerRef} className="header section header-section">
       <div className="header-content">
         <div className="name-3d-wrapper">
           <h1 ref={nameRef} className="main-name main-name-3d">
@@ -64,7 +72,7 @@ function Header() {
           </h1>
         </div>
         <p ref={taglineRef} className="tagline">
-          Fullstack Developer / Software Engineer
+          <TypingEffect texts={roles} speed={100} deleteSpeed={50} delay={2000} />
         </p>
       </div>
       <div className="header-line-node"></div>

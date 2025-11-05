@@ -1,0 +1,114 @@
+.animated-shapes-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.animated-shape {
+  position: absolute;
+  border: 2px solid;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.shape-1 {
+  width: 80px;
+  height: 80px;
+  border-color: var(--neon-blue);
+  border-radius: 50%;
+  top: 15%;
+  left: 8%;
+  box-shadow: 0 0 20px var(--glow-blue);
+}
+
+.shape-2 {
+  width: 60px;
+  height: 60px;
+  border-color: var(--neon-purple);
+  border-radius: 0;
+  transform: rotate(45deg);
+  top: 25%;
+  right: 12%;
+  box-shadow: 0 0 15px var(--glow-purple);
+}
+
+.shape-3 {
+  width: 100px;
+  height: 100px;
+  border-color: var(--neon-blue);
+  border-radius: 0;
+  top: 45%;
+  left: 15%;
+  box-shadow: 0 0 25px var(--glow-blue);
+}
+
+.shape-4 {
+  width: 70px;
+  height: 70px;
+  border-color: var(--neon-purple);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border: none;
+  background: linear-gradient(135deg, var(--neon-purple), transparent);
+  top: 65%;
+  right: 20%;
+  box-shadow: 0 0 20px var(--glow-purple);
+}
+
+.shape-5 {
+  width: 90px;
+  height: 90px;
+  border-color: var(--neon-blue);
+  border-radius: 20%;
+  top: 35%;
+  right: 8%;
+  box-shadow: 0 0 22px var(--glow-blue);
+}
+
+.shape-6 {
+  width: 50px;
+  height: 50px;
+  border-color: var(--neon-purple);
+  border-radius: 50%;
+  bottom: 30%;
+  left: 10%;
+  box-shadow: 0 0 15px var(--glow-purple);
+}
+
+.shape-7 {
+  width: 75px;
+  height: 75px;
+  border-color: var(--neon-blue);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  border: none;
+  background: linear-gradient(45deg, var(--neon-blue), transparent);
+  bottom: 20%;
+  right: 15%;
+  box-shadow: 0 0 20px var(--glow-blue);
+}
+
+.shape-8 {
+  width: 65px;
+  height: 65px;
+  border-color: var(--neon-purple);
+  border-radius: 0;
+  bottom: 50%;
+  left: 5%;
+  box-shadow: 0 0 18px var(--glow-purple);
+}
+
+@media (max-width: 768px) {
+  .animated-shape {
+    opacity: 0.1;
+  }
+  
+  .shape-1, .shape-2, .shape-3, .shape-4, .shape-5, .shape-6, .shape-7, .shape-8 {
+    width: 40px;
+    height: 40px;
+  }
+}
+

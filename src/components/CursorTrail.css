@@ -1,0 +1,25 @@
+.cursor-trail-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    var(--neon-blue),
+    var(--neon-purple)
+  );
+  box-shadow:
+    0 0 10px var(--glow-blue),
+    0 0 20px var(--glow-purple);
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .cursor-trail-dot {
+    display: none;
+  }
+}
+

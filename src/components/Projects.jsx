@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
+import StaggeredText from './StaggeredText'
 import './Projects.css'
 
 const projects = [
@@ -77,10 +78,12 @@ function Projects() {
   }
 
   return (
-    <section ref={projectsRef} className="projects section">
+    <section ref={projectsRef} className="projects section projects-section">
       <div className="branch-line branch-line-projects"></div>
       <div className="branch-node"></div>
-      <h2 className="section-title section-title-center">Projects</h2>
+      <h2 className="section-title section-title-center">
+        <StaggeredText text="Projects" />
+      </h2>
       <div className="projects-container">
         {projects.map((project, index) => (
           <div 

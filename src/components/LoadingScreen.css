@@ -1,0 +1,143 @@
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+.loading-logo {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.logo-circle {
+  width: 100%;
+  height: 100%;
+  border: 3px solid var(--neon-blue);
+  border-radius: 50%;
+  position: relative;
+  animation: logo-rotate 3s linear infinite;
+  box-shadow:
+    0 0 20px var(--glow-blue),
+    inset 0 0 20px var(--glow-blue);
+}
+
+.logo-circle::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: var(--neon-purple);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px var(--glow-purple);
+}
+
+.logo-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 80%;
+  border: 2px solid var(--neon-purple);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: logo-pulse 2s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.loading-text {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--neon-white);
+  text-shadow:
+    0 0 10px var(--glow-white),
+    0 0 20px var(--glow-blue),
+    0 0 30px var(--glow-purple);
+  opacity: 0;
+  transform: translateY(20px);
+  letter-spacing: 0.1em;
+}
+
+.loading-bar {
+  width: 300px;
+  height: 4px;
+  background: rgba(0, 240, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(
+    90deg,
+    var(--neon-purple),
+    var(--neon-blue),
+    var(--neon-purple)
+  );
+  box-shadow:
+    0 0 10px var(--glow-blue),
+    0 0 20px var(--glow-purple);
+  animation: loading-shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes logo-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.2;
+  }
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: -300px 0;
+  }
+  100% {
+    background-position: 300px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .loading-text {
+    font-size: 1.8rem;
+  }
+  
+  .loading-bar {
+    width: 250px;
+  }
+}
+

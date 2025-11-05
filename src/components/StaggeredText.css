@@ -1,0 +1,10 @@
+.staggered-text {
+  display: inline-block;
+}
+
+.stagger-word {
+  display: inline-block;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
