@@ -10,7 +10,7 @@ const projects = [
     description: 'An AI-powered calendar management system that automatically generates, previews, and schedules events based on user input. The system provides smart event suggestions in structured JSON format and allows users to instantly create and manage events through an intuitive interface..',
     tech: ['React', 'Node.js', 'Tailwind CSS', 'Stripe', 'Supabase', 'OpenAI', 'AWS Amplify'],
     github: 'https://github.com',
-    demo: 'https://demo.com',
+    demo: 'https://main.d28h56kkeij3t3.amplifyapp.com/',
     position: 'left'
   },
   {
@@ -21,7 +21,7 @@ const projects = [
     description: 'A customizable AI chat widget designed to be easily embedded into any website and fully integrated with GoHighLevel (GHL). Each client gets a dedicated AI agent trained specifically for their business, enabling personalized and context-aware interactions. The system supports multiple tenants, ensuring isolated data and configurations per client.',
     tech: ['React', 'TailwindCSS', 'Next.js', 'Supabase', 'OpenAI API', 'GoHighLevel'],
     github: 'https://github.com',
-    demo: 'https://demo.com',
+    demo: 'https://lynxai-chatwidget.vercel.app/',
     position: 'right'
   }
 ]

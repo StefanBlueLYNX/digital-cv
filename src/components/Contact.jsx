@@ -114,14 +114,14 @@ function Contact() {
               </a>
             </div>
             <div className="contact-item">
-              <div className="contact-icon">💼</div>
+              <div className="contact-icon">🟥</div>
               <a 
-                href="https://linkedin.com/in/yourprofile" 
+                href="https://www.youtube.com/@guwapi" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="contact-link"
               >
-                LinkedIn
+                Youtube
               </a>
             </div>
             <div className="contact-item">
